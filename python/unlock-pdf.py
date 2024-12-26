@@ -9,6 +9,7 @@
 
 import click
 from pypdf import PdfReader, PdfWriter
+from pypdf.errors import FileNotDecryptedError
 from pathlib import Path
 
 @click.command()
@@ -26,17 +27,16 @@ def unlock_pdf(pdf_file: str, password: str, output: str | None):
         
     try:
         reader.decrypt(password)
-    except Exception:
-        raise click.ClickException("Invalid password")
-    
-    writer = PdfWriter()
-    for page in reader.pages:
-        writer.add_page(page)
+        writer = PdfWriter()
+        for page in reader.pages:
+            writer.add_page(page)
+            
+        with open(output_path, 'wb') as output_file:
+            writer.write(output_file)
         
-    with open(output_path, 'wb') as output_file:
-        writer.write(output_file)
-    
-    click.echo(f"Unlocked PDF saved to: {output_path}")
+        click.echo(f"Unlocked PDF saved to: {output_path}")
+    except FileNotDecryptedError:
+        raise click.ClickException("Invalid password")
 
 if __name__ == '__main__':
     unlock_pdf()
