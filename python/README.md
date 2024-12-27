@@ -17,13 +17,13 @@ A command-line tool to remove password protection from PDF files.
 Basic usage:
 
 ```bash
-uv unlock_pdf.py input.pdf password
+uv run unlock_pdf.py input.pdf password
 ```
 
 Specify output file:
 
 ```bash
-uv unlock_pdf.py input.pdf password -o unlocked.pdf
+uv run unlock_pdf.py input.pdf password -o unlocked.pdf
 ```
 
 ### Arguments
@@ -36,13 +36,13 @@ uv unlock_pdf.py input.pdf password -o unlocked.pdf
 Remove password from 'protected.pdf':
 
 ```bash
-uv unlock_pdf.py protected.pdf mypassword
+uv run unlock_pdf.py protected.pdf mypassword
 ```
 
 Save unlocked file with custom name:
 
 ```bash
-uv unlock_pdf.py protected.pdf mypassword -o final.pdf
+uv run unlock_pdf.py protected.pdf mypassword -o final.pdf
 ```
 
 ### Error Messages
@@ -59,19 +59,19 @@ Downloads YouTube video transcripts and saves them as text files. The script ext
 Basic usage (saves to video_id.txt):
 
 ```bash
-python youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
+uv run youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 Print to stdout:
 
 ```bash
-python youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" -o -
+uv run youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" -o -
 ```
 
 Save to custom file with specific language:
 
 ```bash
-python youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" -o transcript.txt -l es
+uv run youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" -o transcript.txt -l es
 ```
 
 ### Arguments
@@ -85,13 +85,13 @@ python youtube_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" -o trans
 Download English transcript:
 
 ```bash
-python youtube_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+uv run youtube_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 Download Spanish transcript to specific file:
 
 ```bash
-python youtube_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -o rickroll.txt -l es
+uv run youtube_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -o rickroll.txt -l es
 ```
 
 ### Error Messages
