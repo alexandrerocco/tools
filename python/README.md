@@ -3,7 +3,10 @@
 These Python scripts can be run directly from their URLs using `uv run`.
 For more UV info, check [here](https://github.com/astral-sh/uv).
 
+## Table Of Contents
 
+- [unlock\_pdf.py](#unlock_pdfpy)
+- [youtube\_transcript.py](#youtube_transcriptpy)
 
 ## unlock_pdf.py
 
