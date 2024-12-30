@@ -7,6 +7,7 @@ For more UV info, check [here](https://github.com/astral-sh/uv).
 
 - [unlock\_pdf.py](#unlock_pdfpy)
 - [youtube\_transcript.py](#youtube_transcriptpy)
+- [web\_to\_image.py](#webp_to_imagepy)
 
 ## unlock_pdf.py
 
@@ -100,3 +101,38 @@ uv run youtube_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -o ri
 - "Transcripts are disabled for this video": The video owner has disabled transcripts
 - "No transcript found in language '{language}'": No transcript is available in the requested language
 - "Unable to find transcript information": Failed to retrieve transcript metadata from YouTube
+
+## webp_to_image.py
+
+Script to convert a WebP image file to PNG or JPEG format.
+
+### Usage
+
+Basic usage:
+```bash
+python webp_to_image.py INPUT_FILE
+```
+
+### Arguments
+
+- `INPUT_FILE`: Path to the input WebP image file
+- `-o`, `--output`: (Optional) Output file path. If not provided, the output file will have the same name as the input file with - the new extension.
+- `-f`, `--format`: (Optional) Output image format. Choices: png, jpeg. Default: png
+
+### Examples
+
+Convert image.webp to PNG format with default output path:
+
+```bash
+uv run webp_to_image.py image.webp
+```
+
+Convert image.webp to JPEG format with custom output path:
+
+```bash
+uv run webp_to_image.py image.webp -o output/converted.jpeg -f jpeg
+```
+
+### Error Messages
+
+- "Input file must be a WebP image": The provided input file does not have a .webp extension. Ensure the input file is a valid `.webp` image.
